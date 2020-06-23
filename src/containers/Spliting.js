@@ -1,9 +1,12 @@
-import React, {useState, Component} from 'react';
+import React, {useState} from 'react';
 import withSplitting from "../components/Spliting/withSplitting";
 
+// 개발모드로 띄웠을 때만 아래 Warning 출력, 배포모드로 띄웠을 때 무관함.
+// TODO: 개발모드에서 왜 2번 렌더링 되는지 알아보자
+// Warning: Can't call setState on a component that is not yet mounted.
 function Spliting() {
     const [splitMe, setSplitMe] = useState(null);
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     const SplitMeHOC = withSplitting(() => import('../components/Spliting/SplitMe'));
 
     const handleFuncClick = () => {
@@ -28,6 +31,8 @@ function Spliting() {
         <div>
             <button onClick={handleFuncClick}>Click Me(Func)</button>
             <button onClick={handleComponentClick}>Click Me(Component)</button>
+            <button onClick={() => setVisible(true)}>Click Me(HOC)</button>
+            <button onClick={() => setVisible(false)}>Make False(HOC)</button>
             {splitMe}
             {visible && <SplitMeHOC />}
         </div>

@@ -24,7 +24,7 @@ const withSplitting = getComponent => {
             return <Splitted {...this.props} />;
         }
     }
-
+    console.log('withSplitting');
     return WithSplitting;
 };
 
