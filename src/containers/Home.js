@@ -12,6 +12,9 @@ function Home() {
                     <li>
                         <Link to="/contextapi">CONTEXT API</Link>
                     </li>
+                    <li>
+                        <Link to="/spliting">CODE SPLITING</Link>
+                    </li>
                 </ul>
             </nav>
         </div>

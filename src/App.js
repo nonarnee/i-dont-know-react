@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ContextApi from "./containers/ContextApi";
 import Home from "./containers/Home";
+import Spliting from "./containers/Spliting";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <Switch>
           <Route path="/contextapi">
             <ContextApi />
+          </Route>
+          <Route path="/spliting">
+              <Spliting />
           </Route>
           <Route path="/">
             <Home />
