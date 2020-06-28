@@ -8,6 +8,7 @@ function Emotion() {
       <div
         css={css`
           color:${colors.Text2},
+          borderRadius:'12px',
           ${spacing.paddingX(10)},
           ${spacing.paddingY(3)},
         `}
